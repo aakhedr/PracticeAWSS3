@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		365769661B86516F007CB43E /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365769651B86516F007CB43E /* DownloadViewController.swift */; };
 		3665664B1B85AC00009D6198 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3665664A1B85AC00009D6198 /* AppDelegate.swift */; };
 		3665664D1B85AC00009D6198 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3665664C1B85AC00009D6198 /* ViewController.swift */; };
 		366566501B85AC00009D6198 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3665664E1B85AC00009D6198 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		365769651B86516F007CB43E /* DownloadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
 		366566451B85AC00009D6198 /* PracticeAWS2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracticeAWS2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		366566491B85AC00009D6198 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3665664A1B85AC00009D6198 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,13 +125,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3665663C1B85AC00009D6198 = {
+		365769641B864C79007CB43E /* AWSFrameworks */ = {
 			isa = PBXGroup;
 			children = (
 				366566961B85AD43009D6198 /* SystemConfiguration.framework */,
 				366566941B85AD32009D6198 /* libz.dylib */,
 				366566921B85AD19009D6198 /* libsqlite3.dylib */,
 				3665666A1B85AC8E009D6198 /* frameworks */,
+			);
+			name = AWSFrameworks;
+			sourceTree = "<group>";
+		};
+		3665663C1B85AC00009D6198 = {
+			isa = PBXGroup;
+			children = (
+				365769641B864C79007CB43E /* AWSFrameworks */,
 				366566471B85AC00009D6198 /* PracticeAWS2 */,
 				3665665D1B85AC01009D6198 /* PracticeAWS2Tests */,
 				366566461B85AC00009D6198 /* Products */,
@@ -151,6 +161,7 @@
 				3665664A1B85AC00009D6198 /* AppDelegate.swift */,
 				3665669B1B85B0B7009D6198 /* AWS */,
 				3665664C1B85AC00009D6198 /* ViewController.swift */,
+				365769651B86516F007CB43E /* DownloadViewController.swift */,
 				3665664E1B85AC00009D6198 /* Main.storyboard */,
 				366566511B85AC00009D6198 /* Images.xcassets */,
 				366566531B85AC00009D6198 /* LaunchScreen.xib */,
@@ -331,6 +342,7 @@
 			files = (
 				3665664D1B85AC00009D6198 /* ViewController.swift in Sources */,
 				3665664B1B85AC00009D6198 /* AppDelegate.swift in Sources */,
+				365769661B86516F007CB43E /* DownloadViewController.swift in Sources */,
 				3665669A1B85B0AD009D6198 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,6 +553,7 @@
 				366566661B85AC01009D6198 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		366566671B85AC01009D6198 /* Build configuration list for PBXNativeTarget "PracticeAWS2Tests" */ = {
 			isa = XCConfigurationList;
@@ -549,6 +562,7 @@
 				366566691B85AC01009D6198 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
