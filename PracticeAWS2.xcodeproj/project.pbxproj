@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3665664B1B85AC00009D6198 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3665664A1B85AC00009D6198 /* AppDelegate.swift */; };
+		3665664D1B85AC00009D6198 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3665664C1B85AC00009D6198 /* ViewController.swift */; };
+		366566501B85AC00009D6198 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3665664E1B85AC00009D6198 /* Main.storyboard */; };
+		366566521B85AC00009D6198 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 366566511B85AC00009D6198 /* Images.xcassets */; };
+		366566551B85AC00009D6198 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 366566531B85AC00009D6198 /* LaunchScreen.xib */; };
+		366566611B85AC01009D6198 /* PracticeAWS2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366566601B85AC01009D6198 /* PracticeAWS2Tests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3665665B1B85AC01009D6198 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3665663D1B85AC00009D6198 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 366566441B85AC00009D6198;
+			remoteInfo = PracticeAWS2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		366566451B85AC00009D6198 /* PracticeAWS2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracticeAWS2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		366566491B85AC00009D6198 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3665664A1B85AC00009D6198 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3665664C1B85AC00009D6198 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3665664F1B85AC00009D6198 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		366566511B85AC00009D6198 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		366566541B85AC00009D6198 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		3665665A1B85AC01009D6198 /* PracticeAWS2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PracticeAWS2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3665665F1B85AC01009D6198 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		366566601B85AC01009D6198 /* PracticeAWS2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeAWS2Tests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		366566421B85AC00009D6198 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		366566571B85AC00009D6198 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3665663C1B85AC00009D6198 = {
+			isa = PBXGroup;
+			children = (
+				366566471B85AC00009D6198 /* PracticeAWS2 */,
+				3665665D1B85AC01009D6198 /* PracticeAWS2Tests */,
+				366566461B85AC00009D6198 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		366566461B85AC00009D6198 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				366566451B85AC00009D6198 /* PracticeAWS2.app */,
+				3665665A1B85AC01009D6198 /* PracticeAWS2Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		366566471B85AC00009D6198 /* PracticeAWS2 */ = {
+			isa = PBXGroup;
+			children = (
+				3665664A1B85AC00009D6198 /* AppDelegate.swift */,
+				3665664C1B85AC00009D6198 /* ViewController.swift */,
+				3665664E1B85AC00009D6198 /* Main.storyboard */,
+				366566511B85AC00009D6198 /* Images.xcassets */,
+				366566531B85AC00009D6198 /* LaunchScreen.xib */,
+				366566481B85AC00009D6198 /* Supporting Files */,
+			);
+			path = PracticeAWS2;
+			sourceTree = "<group>";
+		};
+		366566481B85AC00009D6198 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				366566491B85AC00009D6198 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3665665D1B85AC01009D6198 /* PracticeAWS2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				366566601B85AC01009D6198 /* PracticeAWS2Tests.swift */,
+				3665665E1B85AC01009D6198 /* Supporting Files */,
+			);
+			path = PracticeAWS2Tests;
+			sourceTree = "<group>";
+		};
+		3665665E1B85AC01009D6198 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3665665F1B85AC01009D6198 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		366566441B85AC00009D6198 /* PracticeAWS2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 366566641B85AC01009D6198 /* Build configuration list for PBXNativeTarget "PracticeAWS2" */;
+			buildPhases = (
+				366566411B85AC00009D6198 /* Sources */,
+				366566421B85AC00009D6198 /* Frameworks */,
+				366566431B85AC00009D6198 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PracticeAWS2;
+			productName = PracticeAWS2;
+			productReference = 366566451B85AC00009D6198 /* PracticeAWS2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		366566591B85AC00009D6198 /* PracticeAWS2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 366566671B85AC01009D6198 /* Build configuration list for PBXNativeTarget "PracticeAWS2Tests" */;
+			buildPhases = (
+				366566561B85AC00009D6198 /* Sources */,
+				366566571B85AC00009D6198 /* Frameworks */,
+				366566581B85AC00009D6198 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3665665C1B85AC01009D6198 /* PBXTargetDependency */,
+			);
+			name = PracticeAWS2Tests;
+			productName = PracticeAWS2Tests;
+			productReference = 3665665A1B85AC01009D6198 /* PracticeAWS2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3665663D1B85AC00009D6198 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Ahmed Khedr";
+				TargetAttributes = {
+					366566441B85AC00009D6198 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					366566591B85AC00009D6198 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 366566441B85AC00009D6198;
+					};
+				};
+			};
+			buildConfigurationList = 366566401B85AC00009D6198 /* Build configuration list for PBXProject "PracticeAWS2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3665663C1B85AC00009D6198;
+			productRefGroup = 366566461B85AC00009D6198 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				366566441B85AC00009D6198 /* PracticeAWS2 */,
+				366566591B85AC00009D6198 /* PracticeAWS2Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		366566431B85AC00009D6198 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				366566501B85AC00009D6198 /* Main.storyboard in Resources */,
+				366566551B85AC00009D6198 /* LaunchScreen.xib in Resources */,
+				366566521B85AC00009D6198 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		366566581B85AC00009D6198 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		366566411B85AC00009D6198 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3665664D1B85AC00009D6198 /* ViewController.swift in Sources */,
+				3665664B1B85AC00009D6198 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		366566561B85AC00009D6198 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				366566611B85AC01009D6198 /* PracticeAWS2Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3665665C1B85AC01009D6198 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 366566441B85AC00009D6198 /* PracticeAWS2 */;
+			targetProxy = 3665665B1B85AC01009D6198 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3665664E1B85AC00009D6198 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3665664F1B85AC00009D6198 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		366566531B85AC00009D6198 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				366566541B85AC00009D6198 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		366566621B85AC01009D6198 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		366566631B85AC01009D6198 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		366566651B85AC01009D6198 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PracticeAWS2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		366566661B85AC01009D6198 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PracticeAWS2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		366566681B85AC01009D6198 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PracticeAWS2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PracticeAWS2.app/PracticeAWS2";
+			};
+			name = Debug;
+		};
+		366566691B85AC01009D6198 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PracticeAWS2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PracticeAWS2.app/PracticeAWS2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		366566401B85AC00009D6198 /* Build configuration list for PBXProject "PracticeAWS2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				366566621B85AC01009D6198 /* Debug */,
+				366566631B85AC01009D6198 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		366566641B85AC01009D6198 /* Build configuration list for PBXNativeTarget "PracticeAWS2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				366566651B85AC01009D6198 /* Debug */,
+				366566661B85AC01009D6198 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		366566671B85AC01009D6198 /* Build configuration list for PBXNativeTarget "PracticeAWS2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				366566681B85AC01009D6198 /* Debug */,
+				366566691B85AC01009D6198 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3665663D1B85AC00009D6198 /* Project object */;
+}
