@@ -19,17 +19,39 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="25U-Ts-Mie">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Item" id="8DH-ng-VGa"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="efr-gG-FST"/>
+                                    <barButtonItem systemItem="action" id="Wvp-Ic-I6a">
+                                        <connections>
+                                            <action selector="showImagePicker:" destination="BYZ-38-t0r" id="sBh-WJ-8EY"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="xVG-Iy-olo">
+                                <rect key="frame" x="281.5" y="281.5" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="25U-Ts-Mie" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" symbolic="YES" id="Giy-mw-5zO"/>
                             <constraint firstItem="25U-Ts-Mie" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Nxu-Jc-zWh"/>
+                            <constraint firstAttribute="centerY" secondItem="xVG-Iy-olo" secondAttribute="centerY" id="hMc-ZF-xsm"/>
                             <constraint firstAttribute="trailing" secondItem="25U-Ts-Mie" secondAttribute="trailing" id="igy-bx-1XJ"/>
+                            <constraint firstItem="xVG-Iy-olo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="290" id="wDC-Ng-Gxh"/>
+                            <constraint firstAttribute="centerX" secondItem="xVG-Iy-olo" secondAttribute="centerX" id="ykX-VH-bPb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xVG-Iy-olo" secondAttribute="bottom" constant="273" id="zuo-AF-KeC"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="wDC-Ng-Gxh"/>
+                                <exclude reference="zuo-AF-KeC"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="spinner" destination="xVG-Iy-olo" id="cAs-pe-O2H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
