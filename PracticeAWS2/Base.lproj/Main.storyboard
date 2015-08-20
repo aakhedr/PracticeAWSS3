@@ -50,6 +50,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="actionButton" destination="Wvp-Ic-I6a" id="7QS-OR-YRD"/>
                         <outlet property="spinner" destination="xVG-Iy-olo" id="cAs-pe-O2H"/>
                     </connections>
                 </viewController>

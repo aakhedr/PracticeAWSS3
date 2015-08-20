@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var actionButton: UIBarButtonItem!
     
     var uploadReqeusts      = [AWSS3TransferManagerUploadRequest?]()
     var uploadFileURLs      = [NSURL?]()
@@ -79,6 +80,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     // MARK: - Save to Amazon S3 Bucket
     func upload(uploadRequest: AWSS3TransferManagerUploadRequest) {
         let transferManager = AWSS3TransferManager.defaultS3TransferManager()
+        actionButton.enabled = false
         
         transferManager.upload(uploadRequest).continueWithBlock { (task) -> AnyObject! in
             if let error = task.error {
@@ -111,10 +113,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                     
                     dispatch_async(dispatch_get_main_queue()) {
                         self.spinner.stopAnimating()
+                        self.actionButton.enabled = true
                     }
                     
                     println("Image should now be saved! to S3 bucket")
                     println("uploadFileURLs: \(self.uploadFileURLs)")
+                    println()
                     println("self.uploadRequests: \(self.uploadReqeusts)")
                 }
             }
