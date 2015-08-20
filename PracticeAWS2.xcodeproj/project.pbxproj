@@ -35,6 +35,7 @@
 		366566931B85AD19009D6198 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 366566921B85AD19009D6198 /* libsqlite3.dylib */; };
 		366566951B85AD32009D6198 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 366566941B85AD32009D6198 /* libz.dylib */; };
 		366566971B85AD43009D6198 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366566961B85AD43009D6198 /* SystemConfiguration.framework */; };
+		3665669A1B85B0AD009D6198 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366566991B85B0AD009D6198 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		366566921B85AD19009D6198 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		366566941B85AD32009D6198 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		366566961B85AD43009D6198 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		366566981B85AE1B009D6198 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "../Bridging-Header.h"; sourceTree = "<group>"; };
+		366566991B85B0AD009D6198 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				3665664A1B85AC00009D6198 /* AppDelegate.swift */,
+				3665669B1B85B0B7009D6198 /* AWS */,
 				3665664C1B85AC00009D6198 /* ViewController.swift */,
 				3665664E1B85AC00009D6198 /* Main.storyboard */,
 				366566511B85AC00009D6198 /* Images.xcassets */,
@@ -212,6 +216,15 @@
 				3665667E1B85AC8E009D6198 /* NOTICE */,
 			);
 			path = extras;
+			sourceTree = "<group>";
+		};
+		3665669B1B85B0B7009D6198 /* AWS */ = {
+			isa = PBXGroup;
+			children = (
+				366566991B85B0AD009D6198 /* Constants.swift */,
+				366566981B85AE1B009D6198 /* Bridging-Header.h */,
+			);
+			name = AWS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +331,7 @@
 			files = (
 				3665664D1B85AC00009D6198 /* ViewController.swift in Sources */,
 				3665664B1B85AC00009D6198 /* AppDelegate.swift in Sources */,
+				3665669A1B85B0AD009D6198 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +468,7 @@
 				INFOPLIST_FILE = PracticeAWS2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -469,6 +484,7 @@
 				INFOPLIST_FILE = PracticeAWS2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
 			name = Release;
 		};
