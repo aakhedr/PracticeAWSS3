@@ -10,16 +10,16 @@ import UIKit
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var actionButton: UIBarButtonItem!
-    
+    @IBOutlet weak var imageCollectionView: UICollectionView!
+
     var uploadReqeusts      = [AWSS3TransferManagerUploadRequest?]()
     var uploadFileURLs      = [NSURL?]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Create a local temp upload directory
         var error = NSErrorPointer()
         
@@ -30,6 +30,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         error: error) {
             println("Creating 'upload' directory failed with error: \(error)")
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,7 +82,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    // MARK: - Save to Amazon S3 Bucket
+    // MARK: - Upload to Amazon S3 Bucket
     func upload(uploadRequest: AWSS3TransferManagerUploadRequest) {
         let transferManager = AWSS3TransferManager.defaultS3TransferManager()
         actionButton.enabled = false
@@ -117,7 +121,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                         self.actionButton.enabled = true
                     }
                     
-                    println("Image should now be saved! to S3 bucket")
+                    println("Image should now be uploaded to S3 bucket")
                     println("uploadFileURLs: \(self.uploadFileURLs)")
                     println()
                     println("self.uploadRequests: \(self.uploadReqeusts)")
@@ -141,6 +145,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
+    // MARK: - UICollectionViewDataSource
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 0
     }
@@ -150,6 +156,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         
         return cell
     }
+    
+    // MARK: - UICollectionViewDataSource
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         

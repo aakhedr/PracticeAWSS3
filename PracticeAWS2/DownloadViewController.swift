@@ -10,6 +10,10 @@ import UIKit
 
 class DownloadViewController: UIViewController {
 
+    
+    
+    @IBOutlet weak var downloadedImagesCollectionView: UICollectionView!    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +25,28 @@ class DownloadViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+}
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+
+extension DownloadViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    // MARK: - UICollectionViewDataSource
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
     }
-    */
-
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = UICollectionViewCell()
+        
+        return cell
+    }
+    
+    // UICollectionViewDelegate
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+    }
 }

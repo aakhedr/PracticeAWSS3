@@ -136,6 +136,23 @@
 			name = AWSFrameworks;
 			sourceTree = "<group>";
 		};
+		365769671B879387007CB43E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3665664C1B85AC00009D6198 /* ViewController.swift */,
+				365769651B86516F007CB43E /* DownloadViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		365769681B87939C007CB43E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3665664E1B85AC00009D6198 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		3665663C1B85AC00009D6198 = {
 			isa = PBXGroup;
 			children = (
@@ -160,11 +177,8 @@
 			children = (
 				3665664A1B85AC00009D6198 /* AppDelegate.swift */,
 				3665669B1B85B0B7009D6198 /* AWS */,
-				3665664C1B85AC00009D6198 /* ViewController.swift */,
-				365769651B86516F007CB43E /* DownloadViewController.swift */,
-				3665664E1B85AC00009D6198 /* Main.storyboard */,
-				366566511B85AC00009D6198 /* Images.xcassets */,
-				366566531B85AC00009D6198 /* LaunchScreen.xib */,
+				365769671B879387007CB43E /* Controller */,
+				365769681B87939C007CB43E /* Storyboards */,
 				366566481B85AC00009D6198 /* Supporting Files */,
 			);
 			path = PracticeAWS2;
@@ -173,6 +187,8 @@
 		366566481B85AC00009D6198 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				366566511B85AC00009D6198 /* Images.xcassets */,
+				366566531B85AC00009D6198 /* LaunchScreen.xib */,
 				366566491B85AC00009D6198 /* Info.plist */,
 			);
 			name = "Supporting Files";
