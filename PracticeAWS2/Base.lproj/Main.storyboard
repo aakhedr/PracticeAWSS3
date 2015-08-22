@@ -23,7 +23,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="efr-gG-FST"/>
                                     <barButtonItem systemItem="action" id="Wvp-Ic-I6a">
                                         <connections>
-                                            <action selector="showImagePicker:" destination="BYZ-38-t0r" id="sBh-WJ-8EY"/>
+                                            <action selector="showAlertController:" destination="BYZ-38-t0r" id="COz-GZ-0ZU"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>

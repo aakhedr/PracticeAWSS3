@@ -34,12 +34,45 @@ class UploadViewController: UIViewController {
         }
     }
     
-    @IBAction func showImagePicker(sender: UIBarButtonItem) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        imagePicker.delegate = self
+    // MARK: - Actions
+    
+    @IBAction func showAlertController(sender: UIBarButtonItem) {
+        let alertController = UIAlertController(
+            title: "Available Actions",
+            message: "Choose your action!",
+            preferredStyle: .ActionSheet)
         
-        presentViewController(imagePicker, animated: true, completion: nil)
+        let selectPicturesAction = UIAlertAction(
+            title: "Select Pictures",
+            style: .Default) { (action: UIAlertAction!) -> Void in
+            self.selectPictures()
+        }
+        alertController.addAction(selectPicturesAction)
+        
+        let cancelAllUploadsAction = UIAlertAction(
+            title: "Cancel All Uploads",
+            style: .Default) { (action: UIAlertAction!) -> Void in
+            self.cancelAllUploads()
+        }
+        alertController.addAction(cancelAllUploadsAction)
+        
+        let cancelAction = UIAlertAction(
+            title: "Cancel",
+            style: .Cancel,
+            handler: nil)
+        alertController.addAction(cancelAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    // MARK: - Helpers
+    
+    func selectPictures() {
+        
+    }
+    
+    func cancelAllUploads() {
+        
     }
     
     // MARK: - Upload to Amazon S3 Bucket
