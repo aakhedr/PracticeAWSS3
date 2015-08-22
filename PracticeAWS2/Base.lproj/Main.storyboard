@@ -147,32 +147,34 @@
                                             <rect key="frame" x="0.0" y="0.0" width="177" height="134"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="S1M-eC-oJH">
-                                                    <rect key="frame" x="0.0" y="132" width="177" height="2"/>
-                                                </progressView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8KF-v7-iLW">
                                                     <rect key="frame" x="8" y="8" width="161" height="118"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4B-uH-Mdd">
                                                     <rect key="frame" x="67" y="99" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="F74-XW-5Me">
+                                                    <rect key="frame" x="8" y="124" width="161" height="2"/>
+                                                </progressView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="8KF-v7-iLW" firstAttribute="centerX" secondItem="S1M-eC-oJH" secondAttribute="centerX" id="6NH-hU-hBP"/>
+                                            <constraint firstItem="F74-XW-5Me" firstAttribute="trailing" secondItem="qSR-kw-LUA" secondAttribute="trailingMargin" id="6ix-TA-fwO"/>
                                             <constraint firstItem="8KF-v7-iLW" firstAttribute="leading" secondItem="qSR-kw-LUA" secondAttribute="leadingMargin" id="81j-ah-92E"/>
+                                            <constraint firstItem="F74-XW-5Me" firstAttribute="leading" secondItem="8KF-v7-iLW" secondAttribute="leading" id="FYF-66-5YY"/>
                                             <constraint firstItem="F4B-uH-Mdd" firstAttribute="top" secondItem="8KF-v7-iLW" secondAttribute="bottom" constant="8" symbolic="YES" id="HEa-Tf-lwv"/>
-                                            <constraint firstItem="S1M-eC-oJH" firstAttribute="leading" secondItem="qSR-kw-LUA" secondAttribute="leading" id="JTO-Fu-oLe"/>
+                                            <constraint firstItem="F74-XW-5Me" firstAttribute="trailing" secondItem="8KF-v7-iLW" secondAttribute="trailing" id="KVL-sR-DVZ"/>
+                                            <constraint firstItem="F74-XW-5Me" firstAttribute="top" secondItem="F4B-uH-Mdd" secondAttribute="bottom" constant="4" id="LEK-Un-PQI"/>
                                             <constraint firstItem="8KF-v7-iLW" firstAttribute="bottom" secondItem="qSR-kw-LUA" secondAttribute="bottomMargin" id="LQh-eV-4VU"/>
                                             <constraint firstItem="F4B-uH-Mdd" firstAttribute="top" secondItem="8KF-v7-iLW" secondAttribute="bottom" constant="-27" id="Tfs-gy-OWa"/>
-                                            <constraint firstAttribute="trailing" secondItem="S1M-eC-oJH" secondAttribute="trailing" id="ZWK-B9-ZUb"/>
                                             <constraint firstItem="F4B-uH-Mdd" firstAttribute="centerX" secondItem="8KF-v7-iLW" secondAttribute="centerX" id="dHI-Zv-AtC"/>
                                             <constraint firstItem="8KF-v7-iLW" firstAttribute="top" secondItem="qSR-kw-LUA" secondAttribute="topMargin" id="oYu-pX-Pf6"/>
-                                            <constraint firstAttribute="bottom" secondItem="S1M-eC-oJH" secondAttribute="bottom" id="z20-kE-jED"/>
+                                            <constraint firstItem="F74-XW-5Me" firstAttribute="bottom" secondItem="8KF-v7-iLW" secondAttribute="bottom" id="pW5-NY-6OD"/>
+                                            <constraint firstItem="F74-XW-5Me" firstAttribute="top" secondItem="8KF-v7-iLW" secondAttribute="bottom" constant="-2" id="u7d-dh-R2p"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -182,7 +184,7 @@
                                         <connections>
                                             <outlet property="imageView" destination="8KF-v7-iLW" id="3JG-qY-3dQ"/>
                                             <outlet property="label" destination="F4B-uH-Mdd" id="4Z3-zt-Ror"/>
-                                            <outlet property="progressView" destination="S1M-eC-oJH" id="0yG-SS-k1S"/>
+                                            <outlet property="progressView" destination="F74-XW-5Me" id="V3X-1j-LtY"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

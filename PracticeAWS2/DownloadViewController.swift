@@ -20,10 +20,12 @@ class DownloadViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Start download
+        downloadedImagesCollectionView.delegate = self
+        downloadedImagesCollectionView.dataSource = self
+        
         listObjects()
-
-        // Create a local temp download directory
+        
+        /* Create a local temp directory for the downloaded objects from the S3 bucket */
         var error = NSErrorPointer()
         
         if !NSFileManager.defaultManager().createDirectoryAtPath(
@@ -37,6 +39,11 @@ class DownloadViewController: UIViewController {
     
     // MARK: - Actions
     
+    /* Show an alert view with actions:
+    1) refresh: reloads collection view data all over
+    2) downloadAll: downloads all objects in the S3 cicket
+    3) cancel: dismisses the alert view
+    */
     @IBAction func showAlertController(sender: UIBarButtonItem) {
         let alertController = UIAlertController(
             title: "Available Actions",
@@ -71,6 +78,12 @@ class DownloadViewController: UIViewController {
     
     // MARK: - Helpers
     
+    /* Connect to the S3 bucket:
+    1) to get the number of objects stored
+    2) makes a temp file for each object
+    3) populate downloadRequests and downloadFileURLs
+    4) Eventually reloads collection view data
+    */
     func listObjects() {
         let s3 = AWSS3.defaultS3()
         
@@ -110,7 +123,6 @@ class DownloadViewController: UIViewController {
                     }
                 }
             }
-            
             return nil
         }
     }
@@ -140,9 +152,9 @@ class DownloadViewController: UIViewController {
                         }
                     }
                 }
-                
                 return nil
             }
+            break
             
         default:
             break
@@ -166,7 +178,6 @@ class DownloadViewController: UIViewController {
                 }
             }
         }
-        
         downloadedImagesCollectionView.reloadData()
     }
     
@@ -185,14 +196,13 @@ class DownloadViewController: UIViewController {
                 }
             }
         }
-        
         downloadedImagesCollectionView.reloadData()
     }
 }
 
 extension DownloadViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
-    // MARK: - UICollectionViewDataSource
+    // MARK: - Collection View Data Source
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return downloadRequests.count
@@ -240,11 +250,10 @@ extension DownloadViewController: UICollectionViewDataSource, UICollectionViewDe
                 cell.imageView.image = UIImage(data: data)
             }
         }
-        
         return cell
     }
     
-    // UICollectionViewDelegate
+    // Collection View Delegate
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         collectionView.deselectItemAtIndexPath(indexPath, animated: true)
@@ -273,14 +282,14 @@ extension DownloadViewController: UICollectionViewDataSource, UICollectionViewDe
             default:
                 break
             }
-            
             collectionView.reloadData()
         }
         
         if let downloadFileURL = downloadFileURLs[indexPath.row] {
-            // Do something here
+            
+            // TODO: -
+            
         }
-        
     }
 }
 
