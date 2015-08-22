@@ -42,12 +42,12 @@ class UploadViewController: UIViewController {
             message: "Choose your action!",
             preferredStyle: .ActionSheet)
         
-        let selectPicturesAction = UIAlertAction(
+        let selectPictureAction = UIAlertAction(
             title: "Select Pictures",
             style: .Default) { (action: UIAlertAction!) -> Void in
-            self.selectPictures()
+            self.selectPicture()
         }
-        alertController.addAction(selectPicturesAction)
+        alertController.addAction(selectPictureAction)
         
         let cancelAllUploadsAction = UIAlertAction(
             title: "Cancel All Uploads",
@@ -67,15 +67,27 @@ class UploadViewController: UIViewController {
     
     // MARK: - Helpers
     
-    func selectPictures() {
+    func selectPicture() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         
+        presentViewController(imagePicker, animated: true, completion: nil)
     }
     
     func cancelAllUploads() {
-        
+        for (index, value) in enumerate(uploadReqeusts) {
+            if let uploadRequest = value {
+                uploadRequest.cancel().continueWithBlock { (task: AWSTask!) -> AnyObject! in
+                    if let error = task.error {
+                        println("cancelAllUploads failed with error: \(error)")
+                    } else if let exception = task.exception {
+                        println("cancelAllUploads failed with exception: \(exception)")
+                    }
+                    return nil
+                }
+            }
+        }
     }
-    
-    // MARK: - Upload to Amazon S3 Bucket
     
     func upload(uploadRequest: AWSS3TransferManagerUploadRequest) {
         let transferManager = AWSS3TransferManager.defaultS3TransferManager()
@@ -131,7 +143,6 @@ class UploadViewController: UIViewController {
                 return index
             }
         }
-        
         return nil
     }
 }
@@ -193,3 +204,11 @@ extension UploadViewController: UICollectionViewDataSource, UICollectionViewDele
     }
 }
 
+// MARK: - Upload Collection View Cell
+
+class UploadCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var label: UILabel!
+}
