@@ -83,6 +83,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     // MARK: - Upload to Amazon S3 Bucket
+    
     func upload(uploadRequest: AWSS3TransferManagerUploadRequest) {
         let transferManager = AWSS3TransferManager.defaultS3TransferManager()
         actionButton.enabled = false

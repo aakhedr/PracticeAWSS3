@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WEA-ku-Sxi">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Uploads-->
@@ -123,49 +124,77 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="tod-i7-PwR"/>
-                                    <barButtonItem systemItem="action" id="jfx-hc-bVV">
+                                    <barButtonItem systemItem="action" id="gfk-3q-Cdu">
                                         <connections>
-                                            <action selector="showImagePicker:" destination="pFZ-H4-qI3" id="CTZ-5b-1oZ"/>
+                                            <action selector="showAlertController:" destination="pFZ-H4-qI3" id="YvY-pm-BsE"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qdR-Ev-ode">
-                                <rect key="frame" x="282" y="282" width="37" height="37"/>
-                                <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7iu-EK-dFJ">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="D7R-9w-XP4">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="177" height="134"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="iamgeCell" id="qSR-kw-LUA">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DownloadCollectionViewCell" id="qSR-kw-LUA" customClass="DownloadCollectionViewCell" customModule="PracticeAWS2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="177" height="134"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="S1M-eC-oJH">
+                                                    <rect key="frame" x="0.0" y="132" width="177" height="2"/>
+                                                </progressView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8KF-v7-iLW">
+                                                    <rect key="frame" x="8" y="8" width="161" height="118"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4B-uH-Mdd">
+                                                    <rect key="frame" x="67" y="99" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="8KF-v7-iLW" firstAttribute="centerX" secondItem="S1M-eC-oJH" secondAttribute="centerX" id="6NH-hU-hBP"/>
+                                            <constraint firstItem="8KF-v7-iLW" firstAttribute="leading" secondItem="qSR-kw-LUA" secondAttribute="leadingMargin" id="81j-ah-92E"/>
+                                            <constraint firstItem="F4B-uH-Mdd" firstAttribute="top" secondItem="8KF-v7-iLW" secondAttribute="bottom" constant="8" symbolic="YES" id="HEa-Tf-lwv"/>
+                                            <constraint firstItem="S1M-eC-oJH" firstAttribute="leading" secondItem="qSR-kw-LUA" secondAttribute="leading" id="JTO-Fu-oLe"/>
+                                            <constraint firstItem="8KF-v7-iLW" firstAttribute="bottom" secondItem="qSR-kw-LUA" secondAttribute="bottomMargin" id="LQh-eV-4VU"/>
+                                            <constraint firstItem="F4B-uH-Mdd" firstAttribute="top" secondItem="8KF-v7-iLW" secondAttribute="bottom" constant="-27" id="Tfs-gy-OWa"/>
+                                            <constraint firstAttribute="trailing" secondItem="S1M-eC-oJH" secondAttribute="trailing" id="ZWK-B9-ZUb"/>
+                                            <constraint firstItem="F4B-uH-Mdd" firstAttribute="centerX" secondItem="8KF-v7-iLW" secondAttribute="centerX" id="dHI-Zv-AtC"/>
+                                            <constraint firstItem="8KF-v7-iLW" firstAttribute="top" secondItem="qSR-kw-LUA" secondAttribute="topMargin" id="oYu-pX-Pf6"/>
+                                            <constraint firstAttribute="bottom" secondItem="S1M-eC-oJH" secondAttribute="bottom" id="z20-kE-jED"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="HEa-Tf-lwv"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="imageView" destination="8KF-v7-iLW" id="3JG-qY-3dQ"/>
+                                            <outlet property="label" destination="F4B-uH-Mdd" id="4Z3-zt-Ror"/>
+                                            <outlet property="progressView" destination="S1M-eC-oJH" id="0yG-SS-k1S"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="qdR-Ev-ode" secondAttribute="centerX" id="5KG-EO-73S"/>
                             <constraint firstItem="7iu-EK-dFJ" firstAttribute="top" secondItem="77l-53-sr4" secondAttribute="bottom" id="Aja-Gp-hWj"/>
                             <constraint firstItem="7iu-EK-dFJ" firstAttribute="leading" secondItem="77l-53-sr4" secondAttribute="leading" id="D5Q-vq-hiM"/>
                             <constraint firstItem="7iu-EK-dFJ" firstAttribute="trailing" secondItem="77l-53-sr4" secondAttribute="trailing" id="ElL-TU-fXB"/>
                             <constraint firstItem="77l-53-sr4" firstAttribute="top" secondItem="pN5-Vf-sZa" secondAttribute="bottom" symbolic="YES" id="EzN-A9-CGS"/>
-                            <constraint firstItem="SEn-Qh-BLZ" firstAttribute="top" secondItem="qdR-Ev-ode" secondAttribute="bottom" constant="273" id="FsW-zA-bIL"/>
-                            <constraint firstAttribute="centerY" secondItem="qdR-Ev-ode" secondAttribute="centerY" id="IrM-xm-nIS"/>
                             <constraint firstItem="77l-53-sr4" firstAttribute="trailing" secondItem="7iu-EK-dFJ" secondAttribute="trailing" id="Jet-4u-k8a"/>
-                            <constraint firstItem="qdR-Ev-ode" firstAttribute="leading" secondItem="eel-1W-2jD" secondAttribute="leading" constant="290" id="PMZ-VM-AmK"/>
                             <constraint firstItem="7iu-EK-dFJ" firstAttribute="bottom" secondItem="SEn-Qh-BLZ" secondAttribute="top" id="WtU-tH-9iV"/>
                             <constraint firstItem="77l-53-sr4" firstAttribute="leading" secondItem="7iu-EK-dFJ" secondAttribute="leading" id="ZA8-d0-EDy"/>
                             <constraint firstItem="77l-53-sr4" firstAttribute="leading" secondItem="eel-1W-2jD" secondAttribute="leading" id="kfW-ju-Bbm"/>
@@ -175,17 +204,12 @@
                             <mask key="constraints">
                                 <exclude reference="Jet-4u-k8a"/>
                                 <exclude reference="ZA8-d0-EDy"/>
-                                <exclude reference="PMZ-VM-AmK"/>
-                                <exclude reference="FsW-zA-bIL"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Downloads" image="downloads" id="m0t-bL-n29"/>
                     <connections>
-                        <outlet property="actionButton" destination="jfx-hc-bVV" id="R5j-K5-rbF"/>
                         <outlet property="downloadedImagesCollectionView" destination="7iu-EK-dFJ" id="GDe-sp-QPo"/>
-                        <outlet property="imageCollectionView" destination="7iu-EK-dFJ" id="rtR-oK-0Qn"/>
-                        <outlet property="spinner" destination="qdR-Ev-ode" id="UVx-I8-Hxm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VBM-BE-2EQ" sceneMemberID="firstResponder"/>
