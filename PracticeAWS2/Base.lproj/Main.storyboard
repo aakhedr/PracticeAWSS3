@@ -8,7 +8,7 @@
         <!--Uploads-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PracticeAWS2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="UploadViewController" customModule="PracticeAWS2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -211,7 +211,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Downloads" image="downloads" id="m0t-bL-n29"/>
                     <connections>
-                        <outlet property="downloadedImagesCollectionView" destination="7iu-EK-dFJ" id="GDe-sp-QPo"/>
+                        <outlet property="downloadedImagesCollectionView" destination="7iu-EK-dFJ" id="K0p-a2-023"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VBM-BE-2EQ" sceneMemberID="firstResponder"/>

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  UploadViewController.swift
 //  PracticeAWS2
 //
 //  Created by Ahmed Khedr on 8/20/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class UploadViewController: UIViewController {
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var actionButton: UIBarButtonItem!
@@ -16,6 +16,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
     var uploadReqeusts      = [AWSS3TransferManagerUploadRequest?]()
     var uploadFileURLs      = [NSURL?]()
+    
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,54 +34,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     @IBAction func showImagePicker(sender: UIBarButtonItem) {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         imagePicker.delegate = self
         
         presentViewController(imagePicker, animated: true, completion: nil)
-    }
-    
-    // MARK: - Image Picker Controller Delegate
-    
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-        
-        dismissViewControllerAnimated(true, completion: nil)
-        spinner.startAnimating()
-        
-        if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            let fileName = NSProcessInfo.processInfo().globallyUniqueString.stringByAppendingString(".png")
-            let filePAth = NSTemporaryDirectory().stringByAppendingPathComponent("upload").stringByAppendingPathComponent(fileName)
-            let imageData = UIImagePNGRepresentation(originalImage)
-            imageData.writeToFile(filePAth, atomically: true)
-            
-            // Configure S3 Upload Request
-            
-            let uploadRequest = AWSS3TransferManagerUploadRequest()
-            uploadRequest.body = NSURL(fileURLWithPath: filePAth)!
-            uploadRequest.key = fileName
-            uploadRequest.bucket = S3BucketName
-            
-            self.uploadReqeusts.append(uploadRequest)
-            self.uploadFileURLs.append(nil)
-            
-            // Start AWS upload task
-            self.upload(uploadRequest)
-        }
-        
-    }
-    
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: - Upload to Amazon S3 Bucket
@@ -128,7 +88,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                     println("self.uploadRequests: \(self.uploadReqeusts)")
                 }
             }
-            
             return nil
         }
     }
@@ -144,7 +103,43 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
 }
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+// MARK: - Image Picker Controller Delegate
+
+extension UploadViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        spinner.startAnimating()
+        
+        if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            let fileName = NSProcessInfo.processInfo().globallyUniqueString.stringByAppendingString(".png")
+            let filePAth = NSTemporaryDirectory().stringByAppendingPathComponent("upload").stringByAppendingPathComponent(fileName)
+            let imageData = UIImagePNGRepresentation(originalImage)
+            imageData.writeToFile(filePAth, atomically: true)
+            
+            // Configure S3 Upload Request
+            
+            let uploadRequest = AWSS3TransferManagerUploadRequest()
+            uploadRequest.body = NSURL(fileURLWithPath: filePAth)!
+            uploadRequest.key = fileName
+            uploadRequest.bucket = S3BucketName
+            
+            self.uploadReqeusts.append(uploadRequest)
+            self.uploadFileURLs.append(nil)
+            
+            // Start AWS upload task
+            self.upload(uploadRequest)
+        }
+        
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
+extension UploadViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     // MARK: - UICollectionViewDataSource
     
@@ -163,7 +158,5 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
     }
-    
-    
 }
 
