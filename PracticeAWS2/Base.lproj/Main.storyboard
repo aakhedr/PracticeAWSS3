@@ -45,13 +45,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iXX-MZ-las">
-                                                    <rect key="frame" x="0.0" y="0.0" width="177" height="134"/>
+                                                    <rect key="frame" x="8" y="8" width="161" height="118"/>
                                                 </imageView>
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="miU-A2-Lq0">
-                                                    <rect key="frame" x="0.0" y="132" width="177" height="2"/>
+                                                    <rect key="frame" x="8" y="126" width="161" height="2"/>
                                                 </progressView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNa-Fs-v5I">
-                                                    <rect key="frame" x="67" y="105" width="42" height="21"/>
+                                                    <rect key="frame" x="67" y="101.5" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -61,16 +61,33 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="pNa-Fs-v5I" firstAttribute="bottom" secondItem="f00-X6-bTR" secondAttribute="bottomMargin" id="0tB-Vf-YQa"/>
-                                            <constraint firstItem="miU-A2-Lq0" firstAttribute="trailing" secondItem="iXX-MZ-las" secondAttribute="trailing" id="Ha4-yT-aNr"/>
-                                            <constraint firstAttribute="bottom" secondItem="iXX-MZ-las" secondAttribute="bottom" id="K0c-N7-cr0"/>
-                                            <constraint firstAttribute="trailing" secondItem="iXX-MZ-las" secondAttribute="trailing" id="WaH-6I-b6k"/>
-                                            <constraint firstItem="iXX-MZ-las" firstAttribute="leading" secondItem="f00-X6-bTR" secondAttribute="leading" id="bi2-RG-DIK"/>
-                                            <constraint firstItem="pNa-Fs-v5I" firstAttribute="centerX" secondItem="miU-A2-Lq0" secondAttribute="centerX" id="cal-AN-79u"/>
+                                            <constraint firstItem="miU-A2-Lq0" firstAttribute="bottom" secondItem="iXX-MZ-las" secondAttribute="bottom" id="272-8l-rIy"/>
+                                            <constraint firstItem="pNa-Fs-v5I" firstAttribute="centerX" secondItem="iXX-MZ-las" secondAttribute="centerX" id="6CO-x3-nuX"/>
+                                            <constraint firstItem="iXX-MZ-las" firstAttribute="top" secondItem="f00-X6-bTR" secondAttribute="topMargin" id="Enh-vm-LYI"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="iXX-MZ-las" secondAttribute="bottom" id="F3j-u0-16u"/>
+                                            <constraint firstItem="pNa-Fs-v5I" firstAttribute="bottom" secondItem="iXX-MZ-las" secondAttribute="bottom" constant="-4" id="L7R-Xq-iPo"/>
+                                            <constraint firstItem="iXX-MZ-las" firstAttribute="leading" secondItem="f00-X6-bTR" secondAttribute="leadingMargin" id="MQu-Fs-2cm"/>
+                                            <constraint firstItem="miU-A2-Lq0" firstAttribute="top" secondItem="iXX-MZ-las" secondAttribute="bottom" id="Nax-ll-SRs"/>
+                                            <constraint firstItem="miU-A2-Lq0" firstAttribute="trailing" secondItem="iXX-MZ-las" secondAttribute="trailing" id="VXO-Vt-aiw"/>
+                                            <constraint firstItem="miU-A2-Lq0" firstAttribute="trailing" secondItem="iXX-MZ-las" secondAttribute="trailing" id="aoG-mJ-nNM"/>
                                             <constraint firstItem="miU-A2-Lq0" firstAttribute="centerY" secondItem="iXX-MZ-las" secondAttribute="centerY" constant="66" id="chY-yf-pFq"/>
-                                            <constraint firstItem="iXX-MZ-las" firstAttribute="top" secondItem="f00-X6-bTR" secondAttribute="top" id="hCs-xx-2zN"/>
-                                            <constraint firstItem="miU-A2-Lq0" firstAttribute="leading" secondItem="iXX-MZ-las" secondAttribute="leading" id="r8m-9z-ivS"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="miU-A2-Lq0" secondAttribute="trailing" id="cq3-PC-vpn"/>
+                                            <constraint firstItem="miU-A2-Lq0" firstAttribute="leading" secondItem="iXX-MZ-las" secondAttribute="leading" id="jmh-Hp-rUH"/>
+                                            <constraint firstItem="miU-A2-Lq0" firstAttribute="top" secondItem="iXX-MZ-las" secondAttribute="bottom" id="pCM-Ge-mrN"/>
+                                            <constraint firstItem="miU-A2-Lq0" firstAttribute="leading" secondItem="iXX-MZ-las" secondAttribute="leading" id="prY-kY-IPE"/>
                                             <constraint firstItem="pNa-Fs-v5I" firstAttribute="top" secondItem="f00-X6-bTR" secondAttribute="topMargin" constant="97" id="rbb-aZ-YNq"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="0tB-Vf-YQa"/>
+                                                <exclude reference="rbb-aZ-YNq"/>
+                                                <exclude reference="272-8l-rIy"/>
+                                                <exclude reference="Nax-ll-SRs"/>
+                                                <exclude reference="aoG-mJ-nNM"/>
+                                                <exclude reference="chY-yf-pFq"/>
+                                                <exclude reference="jmh-Hp-rUH"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <outlet property="imageView" destination="iXX-MZ-las" id="G3m-f5-Kec"/>
                                             <outlet property="label" destination="pNa-Fs-v5I" id="6FT-8E-Y4K"/>
@@ -79,10 +96,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="xVG-Iy-olo">
-                                <rect key="frame" x="282" y="282" width="37" height="37"/>
-                                <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -91,29 +104,21 @@
                             <constraint firstItem="pjq-4n-l6f" firstAttribute="top" secondItem="25U-Ts-Mie" secondAttribute="bottom" id="Kep-jS-Lei"/>
                             <constraint firstItem="25U-Ts-Mie" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Nxu-Jc-zWh"/>
                             <constraint firstItem="pjq-4n-l6f" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="OA3-tS-4rl"/>
-                            <constraint firstAttribute="centerY" secondItem="xVG-Iy-olo" secondAttribute="centerY" id="hMc-ZF-xsm"/>
                             <constraint firstAttribute="trailing" secondItem="25U-Ts-Mie" secondAttribute="trailing" id="igy-bx-1XJ"/>
                             <constraint firstItem="25U-Ts-Mie" firstAttribute="trailing" secondItem="pjq-4n-l6f" secondAttribute="trailing" id="qRd-qS-KhQ"/>
                             <constraint firstItem="pjq-4n-l6f" firstAttribute="leading" secondItem="25U-Ts-Mie" secondAttribute="leading" id="rD6-Ci-4g4"/>
-                            <constraint firstItem="xVG-Iy-olo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="290" id="wDC-Ng-Gxh"/>
                             <constraint firstItem="25U-Ts-Mie" firstAttribute="leading" secondItem="pjq-4n-l6f" secondAttribute="leading" id="wdP-U6-jDR"/>
-                            <constraint firstAttribute="centerX" secondItem="xVG-Iy-olo" secondAttribute="centerX" id="ykX-VH-bPb"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xVG-Iy-olo" secondAttribute="bottom" constant="273" id="zuo-AF-KeC"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="qRd-qS-KhQ"/>
                                 <exclude reference="wdP-U6-jDR"/>
-                                <exclude reference="wDC-Ng-Gxh"/>
-                                <exclude reference="zuo-AF-KeC"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Uploads" image="uploads" id="U1Q-VV-PeN"/>
                     <connections>
-                        <outlet property="actionButton" destination="Wvp-Ic-I6a" id="7QS-OR-YRD"/>
-                        <outlet property="imageCollectionView" destination="pjq-4n-l6f" id="mT4-F6-6aj"/>
-                        <outlet property="spinner" destination="xVG-Iy-olo" id="cAs-pe-O2H"/>
+                        <outlet property="uploadedImagesCollectionView" destination="pjq-4n-l6f" id="GsZ-bI-3Sy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -181,35 +186,37 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8KF-v7-iLW">
                                                     <rect key="frame" x="8" y="8" width="161" height="118"/>
                                                 </imageView>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="F74-XW-5Me">
+                                                    <rect key="frame" x="8" y="126" width="161" height="2"/>
+                                                </progressView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4B-uH-Mdd">
-                                                    <rect key="frame" x="67" y="99" width="42" height="21"/>
+                                                    <rect key="frame" x="67" y="101.5" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="F74-XW-5Me">
-                                                    <rect key="frame" x="8" y="124" width="161" height="2"/>
-                                                </progressView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="F74-XW-5Me" firstAttribute="trailing" secondItem="qSR-kw-LUA" secondAttribute="trailingMargin" id="6ix-TA-fwO"/>
+                                            <constraint firstItem="F4B-uH-Mdd" firstAttribute="bottom" secondItem="8KF-v7-iLW" secondAttribute="bottom" constant="-4" id="1as-PS-oxj"/>
                                             <constraint firstItem="8KF-v7-iLW" firstAttribute="leading" secondItem="qSR-kw-LUA" secondAttribute="leadingMargin" id="81j-ah-92E"/>
-                                            <constraint firstItem="F74-XW-5Me" firstAttribute="leading" secondItem="8KF-v7-iLW" secondAttribute="leading" id="FYF-66-5YY"/>
                                             <constraint firstItem="F4B-uH-Mdd" firstAttribute="top" secondItem="8KF-v7-iLW" secondAttribute="bottom" constant="8" symbolic="YES" id="HEa-Tf-lwv"/>
-                                            <constraint firstItem="F74-XW-5Me" firstAttribute="trailing" secondItem="8KF-v7-iLW" secondAttribute="trailing" id="KVL-sR-DVZ"/>
                                             <constraint firstItem="F74-XW-5Me" firstAttribute="top" secondItem="F4B-uH-Mdd" secondAttribute="bottom" constant="4" id="LEK-Un-PQI"/>
                                             <constraint firstItem="8KF-v7-iLW" firstAttribute="bottom" secondItem="qSR-kw-LUA" secondAttribute="bottomMargin" id="LQh-eV-4VU"/>
+                                            <constraint firstItem="F74-XW-5Me" firstAttribute="trailing" secondItem="8KF-v7-iLW" secondAttribute="trailing" id="MpO-HL-hcb"/>
+                                            <constraint firstItem="F74-XW-5Me" firstAttribute="leading" secondItem="8KF-v7-iLW" secondAttribute="leading" id="OEo-CI-l0q"/>
                                             <constraint firstItem="F4B-uH-Mdd" firstAttribute="top" secondItem="8KF-v7-iLW" secondAttribute="bottom" constant="-27" id="Tfs-gy-OWa"/>
+                                            <constraint firstItem="F74-XW-5Me" firstAttribute="trailing" secondItem="qSR-kw-LUA" secondAttribute="trailingMargin" id="aJk-zB-p9m"/>
                                             <constraint firstItem="F4B-uH-Mdd" firstAttribute="centerX" secondItem="8KF-v7-iLW" secondAttribute="centerX" id="dHI-Zv-AtC"/>
+                                            <constraint firstItem="F74-XW-5Me" firstAttribute="top" secondItem="8KF-v7-iLW" secondAttribute="bottom" id="e4D-Oa-TJp"/>
                                             <constraint firstItem="8KF-v7-iLW" firstAttribute="top" secondItem="qSR-kw-LUA" secondAttribute="topMargin" id="oYu-pX-Pf6"/>
-                                            <constraint firstItem="F74-XW-5Me" firstAttribute="bottom" secondItem="8KF-v7-iLW" secondAttribute="bottom" id="pW5-NY-6OD"/>
-                                            <constraint firstItem="F74-XW-5Me" firstAttribute="top" secondItem="8KF-v7-iLW" secondAttribute="bottom" constant="-2" id="u7d-dh-R2p"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="HEa-Tf-lwv"/>
+                                                <exclude reference="Tfs-gy-OWa"/>
+                                                <exclude reference="LEK-Un-PQI"/>
                                             </mask>
                                         </variation>
                                         <connections>
