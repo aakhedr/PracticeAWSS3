@@ -25,7 +25,7 @@ class DownloadViewController: UIViewController {
         
         listObjects()
         
-        /* Create a local temp directory for the downloaded objects from the S3 bucket */
+        /* Create a local directory for the downloaded objects from the S3 bucket */
         var error = NSErrorPointer()
         
         if !NSFileManager.defaultManager().createDirectoryAtPath(

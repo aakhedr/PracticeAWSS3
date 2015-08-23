@@ -23,7 +23,7 @@ class UploadViewController: UIViewController {
         uploadedImagesCollectionView.dataSource = self
         uploadedImagesCollectionView.delegate = self
         
-        // Create a local temp upload directory
+        // Create a local upload directory
         var error = NSErrorPointer()
         
         if !NSFileManager.defaultManager().createDirectoryAtPath(

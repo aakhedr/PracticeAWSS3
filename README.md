@@ -1,5 +1,5 @@
 # PracticeAWSS3
-Practice with AWSS3 and AWS Cognito (unauthenticated access) for iOS
+Practice with AWSS3 and AWSCognito (unauthenticated access) for iOS
 
 S3 bucket name and cognito pool identity ID untracked by git
 
