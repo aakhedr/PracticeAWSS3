@@ -135,7 +135,7 @@ class DownloadViewController: UIViewController {
             transferManager.download(downloadRequest).continueWithBlock { (task: AWSTask!) -> AnyObject! in
                 if let error = task.error {
                     if error.domain == AWSS3TransferManagerErrorDomain as String && AWSS3TransferManagerErrorType(rawValue: error.code) == AWSS3TransferManagerErrorType.Paused {
-                        print("Download paused")
+                        println("Download paused")
                     } else {
                         println("download() failed with error: \(error)")
                     }
@@ -212,7 +212,7 @@ extension DownloadViewController: UICollectionViewDataSource, UICollectionViewDe
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DownloadCollectionViewCell", forIndexPath: indexPath) as! DownloadCollectionViewCell
         
         if let downloadRequest = downloadRequests[indexPath.row] {
-            downloadRequest.downloadProgress = { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) -> Void in
+            downloadRequest.downloadProgress = { (bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) -> Void in
                 if totalBytesExpectedToWrite > 0 {
                     dispatch_async(dispatch_get_main_queue()) {
                         cell.progressView.progress = Float(Double(totalBytesWritten) / Double(totalBytesExpectedToWrite))
@@ -223,18 +223,20 @@ extension DownloadViewController: UICollectionViewDataSource, UICollectionViewDe
             cell.imageView.image = nil
             
             switch downloadRequest.state {
-                
             case .NotStarted, .Paused:
                 cell.progressView.progress = 0.0
+                cell.label.hidden = false
                 cell.label.text = "Download"
                 break
                 
             case .Running:
+                cell.label.hidden = false
                 cell.label.text = "Pause"
                 break
                 
             case .Canceling:
                 cell.progressView.progress = 1.0
+                cell.label.hidden = false
                 cell.label.text = "Cancelled"
                 break
                 
@@ -261,7 +263,7 @@ extension DownloadViewController: UICollectionViewDataSource, UICollectionViewDe
             switch downloadRequest.state {
                 
             case .NotStarted, .Paused:
-                self.download(downloadRequest)
+                download(downloadRequest)
                 break
                 
             case .Running:
@@ -287,8 +289,8 @@ extension DownloadViewController: UICollectionViewDataSource, UICollectionViewDe
         
         if let downloadFileURL = downloadFileURLs[indexPath.row] {
             
-            // TODO: -
-            
+            // TODO: - Show image in a detail view
+            println("Did not implement a detail view")
         }
     }
 }

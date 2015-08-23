@@ -165,10 +165,10 @@ extension UploadViewController: UINavigationControllerDelegate, UIImagePickerCon
             uploadRequest.key = fileName
             uploadRequest.bucket = S3BucketName
             
-            self.uploadReqeusts.append(uploadRequest)
-            self.uploadFileURLs.append(nil)
+            uploadReqeusts.append(uploadRequest)
+            uploadFileURLs.append(nil)
             
-            self.upload(uploadRequest)
+            upload(uploadRequest)
         }
         uploadedImagesCollectionView.reloadData()
     }
@@ -191,7 +191,6 @@ extension UploadViewController: UICollectionViewDataSource, UICollectionViewDele
         
         if let uploadRequest = uploadReqeusts[indexPath.row] {
             switch uploadRequest.state {
-                
             case .Running:
                 if let data = NSData(contentsOfURL: uploadRequest.body) {
                     cell.imageView.image = UIImage(data: data)

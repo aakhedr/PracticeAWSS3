@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E24E660C-D980-48EA-9059-DE89FDC8B2B6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>184AA5B1DB5F79ED26F86514D41051A0DE5C1B86</key>
+		<string>https://github.com/aakhedr/PracticeAWSS3.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PracticeAWS2.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>184AA5B1DB5F79ED26F86514D41051A0DE5C1B86</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/aakhedr/PracticeAWSS3.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>184AA5B1DB5F79ED26F86514D41051A0DE5C1B86</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>184AA5B1DB5F79ED26F86514D41051A0DE5C1B86</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PracticeAWS2</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -188,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				366566511B85AC00009D6198 /* Images.xcassets */,
+				366566981B85AE1B009D6198 /* Bridging-Header.h */,
 				366566531B85AC00009D6198 /* LaunchScreen.xib */,
 				366566491B85AC00009D6198 /* Info.plist */,
 			);
@@ -249,7 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				366566991B85B0AD009D6198 /* Constants.swift */,
-				366566981B85AE1B009D6198 /* Bridging-Header.h */,
 			);
 			name = AWS;
 			sourceTree = "<group>";
