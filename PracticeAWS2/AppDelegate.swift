@@ -16,25 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
-        let credentialsProvider = AWSCognitoCredentialsProvider(
-            regionType: DefaultServiceRegionType,
-            identityPoolId: CognitoIdentityPoolId
-        )
-        
-        if let token: AnyObject = userDefaults.objectForKey(FBAccessToken) {
-            credentialsProvider.logins = [
-                "graph.facebook.com" : token
-            ]
-        }
-        
-        let defaultServiceConfiguration = AWSServiceConfiguration(
-            region: AWSRegionType.EUWest1,
-            credentialsProvider: credentialsProvider
-        )
-        
-        AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = defaultServiceConfiguration
-        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     

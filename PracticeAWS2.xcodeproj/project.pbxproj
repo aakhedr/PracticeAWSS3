@@ -187,7 +187,6 @@
 		366566471B85AC00009D6198 /* PracticeAWS2 */ = {
 			isa = PBXGroup;
 			children = (
-				3665664A1B85AC00009D6198 /* AppDelegate.swift */,
 				3665669B1B85B0B7009D6198 /* AWS */,
 				365769671B879387007CB43E /* Controller */,
 				365769681B87939C007CB43E /* Storyboards */,
@@ -200,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				366566511B85AC00009D6198 /* Images.xcassets */,
+				3665664A1B85AC00009D6198 /* AppDelegate.swift */,
 				366566981B85AE1B009D6198 /* Bridging-Header.h */,
 				366566531B85AC00009D6198 /* LaunchScreen.xib */,
 				366566491B85AC00009D6198 /* Info.plist */,

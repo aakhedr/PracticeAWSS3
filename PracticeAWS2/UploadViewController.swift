@@ -42,7 +42,7 @@ class UploadViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        if userDefaults.objectForKey(FBAccessToken) != nil {
+        if userDefaults.objectForKey(identityId) != nil {
             FBLoginButton.title = "Logout"
         }
     }
@@ -83,9 +83,9 @@ class UploadViewController: UIViewController {
             let loginController = storyboard?.instantiateViewControllerWithIdentifier("LogIn") as! FBLoginViewController
             presentViewController(loginController, animated: true, completion: nil)
         } else if sender.title == "Logout" {
-            if userDefaults.objectForKey(FBAccessToken) != nil {
+            if userDefaults.objectForKey(identityId) != nil {
                 loginManager.logOut()
-                userDefaults.removeObjectForKey(FBAccessToken)
+                userDefaults.removeObjectForKey(identityId)
                 dismissViewControllerAnimated(true, completion: nil)
             }
         }

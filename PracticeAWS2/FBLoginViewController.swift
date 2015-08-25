@@ -11,7 +11,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 let userDefaults = NSUserDefaults.standardUserDefaults()
-let FBAccessToken = "FBAccessToken"
+let identityId = "IdentityID"
 
 struct ReadPermissions {
     static let Email        = "email"
@@ -42,9 +42,36 @@ class FBLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             
 
         } else {
-            userDefaults.setObject(FBSDKAccessToken.currentAccessToken().tokenString, forKey: FBAccessToken)
-            
             // TODO: - Need animation here
+            
+            let credentialsProvider = AWSCognitoCredentialsProvider(
+                regionType: DefaultServiceRegionType,
+                identityPoolId: CognitoIdentityPoolId
+            )
+            
+            credentialsProvider.logins = [
+                "graph.facebook.com" : FBSDKAccessToken.currentAccessToken().tokenString
+            ]
+            
+            let defaultServiceConfiguration = AWSServiceConfiguration(
+                region: AWSRegionType.EUWest1,
+                credentialsProvider: credentialsProvider
+            )
+            AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = defaultServiceConfiguration
+            
+            // Store the Cognito identity ID
+            userDefaults.setObject(credentialsProvider.identityId, forKey: identityId)
+            
+//            let syncClient: AWSCognito = AWSCognito.defaultCognito()
+//            let dataset: AWSCognitoDataset = syncClient.openOrCreateDataset("myDataSet")
+//            dataset.setString("myValue", forKey: "myKey")
+//            
+//            dataset.synchronize().continueWithBlock { (task: AWSTask!) -> AnyObject! in
+//                
+//                // Do something here
+//                return nil
+//            }
+            
             performSegueWithIdentifier("TabBarSegue", sender: self)
         }
     }
@@ -55,6 +82,14 @@ class FBLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBAction func useAppAsGuest(sender: UIButton) {
         performSegueWithIdentifier("TabBarSegue", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "TabBarSegue" {
+            
+            // TODO: - Lets see if we want to do something here!
+            
+        }
     }
     
 }
