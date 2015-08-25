@@ -163,14 +163,26 @@
                                     </mask>
                                 </variation>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JpD-7r-4oq">
+                                <rect key="frame" x="16" y="323" width="568" height="30"/>
+                                <state key="normal" title="Use as guest">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="useAppAsGuest:" destination="4w1-VG-yrp" eventType="touchUpInside" id="agC-nR-OaL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="JpD-7r-4oq" firstAttribute="leading" secondItem="MSN-87-WAl" secondAttribute="leading" id="38e-5E-0gy"/>
                             <constraint firstItem="MSN-87-WAl" firstAttribute="trailing" secondItem="Id3-iq-HMw" secondAttribute="trailingMargin" id="5EA-gH-XS5"/>
                             <constraint firstItem="iOm-7U-PlW" firstAttribute="top" secondItem="RUX-j4-6h8" secondAttribute="bottom" id="PRu-Jm-Rac"/>
                             <constraint firstItem="iOm-7U-PlW" firstAttribute="leading" secondItem="MSN-87-WAl" secondAttribute="leading" id="Ssd-4L-C4e"/>
                             <constraint firstItem="MSN-87-WAl" firstAttribute="centerY" secondItem="Id3-iq-HMw" secondAttribute="centerY" id="aIk-0l-zS9"/>
+                            <constraint firstItem="JpD-7r-4oq" firstAttribute="trailing" secondItem="MSN-87-WAl" secondAttribute="trailing" id="c8Z-89-fHG"/>
                             <constraint firstItem="MSN-87-WAl" firstAttribute="leading" secondItem="Id3-iq-HMw" secondAttribute="leadingMargin" id="dVr-5k-Pdn"/>
+                            <constraint firstItem="JpD-7r-4oq" firstAttribute="top" secondItem="MSN-87-WAl" secondAttribute="bottom" constant="8" symbolic="YES" id="i5N-3M-rKc"/>
                         </constraints>
                     </view>
                     <connections>

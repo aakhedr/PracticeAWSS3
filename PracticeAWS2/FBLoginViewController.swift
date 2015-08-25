@@ -50,4 +50,11 @@ class FBLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {  }
+    
+    // MARK: - Actions
+    
+    @IBAction func useAppAsGuest(sender: UIButton) {
+        performSegueWithIdentifier("TabBarSegue", sender: self)
+    }
+    
 }
