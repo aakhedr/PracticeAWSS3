@@ -37,6 +37,9 @@
 		366566951B85AD32009D6198 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 366566941B85AD32009D6198 /* libz.dylib */; };
 		366566971B85AD43009D6198 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366566961B85AD43009D6198 /* SystemConfiguration.framework */; };
 		3665669A1B85B0AD009D6198 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366566991B85B0AD009D6198 /* Constants.swift */; };
+		36CF68DA1B8CA1150080CCA9 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36CF68D71B8CA1150080CCA9 /* FBSDKCoreKit.framework */; };
+		36CF68DB1B8CA1150080CCA9 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36CF68D81B8CA1150080CCA9 /* FBSDKLoginKit.framework */; };
+		36CF68DC1B8CA1150080CCA9 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36CF68D91B8CA1150080CCA9 /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		366566961B85AD43009D6198 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		366566981B85AE1B009D6198 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "../Bridging-Header.h"; sourceTree = "<group>"; };
 		366566991B85B0AD009D6198 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		36CF68D71B8CA1150080CCA9 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		36CF68D81B8CA1150080CCA9 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		36CF68D91B8CA1150080CCA9 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +102,12 @@
 				366566951B85AD32009D6198 /* libz.dylib in Frameworks */,
 				366566931B85AD19009D6198 /* libsqlite3.dylib in Frameworks */,
 				366566811B85AC8E009D6198 /* AWSCloudWatch.framework in Frameworks */,
+				36CF68DA1B8CA1150080CCA9 /* FBSDKCoreKit.framework in Frameworks */,
 				3665668D1B85AC8E009D6198 /* AWSSNS.framework in Frameworks */,
 				366566901B85AC8E009D6198 /* AWSCognito.framework in Frameworks */,
+				36CF68DC1B8CA1150080CCA9 /* FBSDKShareKit.framework in Frameworks */,
 				366566861B85AC8E009D6198 /* AWSKinesis.framework in Frameworks */,
+				36CF68DB1B8CA1150080CCA9 /* FBSDKLoginKit.framework in Frameworks */,
 				366566821B85AC8E009D6198 /* AWSCore.framework in Frameworks */,
 				366566891B85AC8E009D6198 /* AWSMobileAnalytics.framework in Frameworks */,
 				366566871B85AC8E009D6198 /* AWSLambda.framework in Frameworks */,
@@ -156,6 +165,7 @@
 		3665663C1B85AC00009D6198 = {
 			isa = PBXGroup;
 			children = (
+				36CF68DD1B8CA1270080CCA9 /* FacebookFrameworks */,
 				365769641B864C79007CB43E /* AWSFrameworks */,
 				366566471B85AC00009D6198 /* PracticeAWS2 */,
 				3665665D1B85AC01009D6198 /* PracticeAWS2Tests */,
@@ -252,6 +262,16 @@
 				366566991B85B0AD009D6198 /* Constants.swift */,
 			);
 			name = AWS;
+			sourceTree = "<group>";
+		};
+		36CF68DD1B8CA1270080CCA9 /* FacebookFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36CF68D71B8CA1150080CCA9 /* FBSDKCoreKit.framework */,
+				36CF68D81B8CA1150080CCA9 /* FBSDKLoginKit.framework */,
+				36CF68D91B8CA1150080CCA9 /* FBSDKShareKit.framework */,
+			);
+			name = FacebookFrameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -492,6 +512,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/frameworks",
 					"$(PROJECT_DIR)/frameworks/extras",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PracticeAWS2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -508,6 +529,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/frameworks",
 					"$(PROJECT_DIR)/frameworks/extras",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PracticeAWS2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
