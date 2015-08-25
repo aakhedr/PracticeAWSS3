@@ -168,8 +168,7 @@
 		3665663C1B85AC00009D6198 = {
 			isa = PBXGroup;
 			children = (
-				36CF68DD1B8CA1270080CCA9 /* FacebookFrameworks */,
-				365769641B864C79007CB43E /* AWSFrameworks */,
+				36CF68E01B8CB1E50080CCA9 /* Frameworks */,
 				366566471B85AC00009D6198 /* PracticeAWS2 */,
 				3665665D1B85AC01009D6198 /* PracticeAWS2Tests */,
 				366566461B85AC00009D6198 /* Products */,
@@ -275,6 +274,15 @@
 				36CF68D91B8CA1150080CCA9 /* FBSDKShareKit.framework */,
 			);
 			name = FacebookFrameworks;
+			sourceTree = "<group>";
+		};
+		36CF68E01B8CB1E50080CCA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36CF68DD1B8CA1270080CCA9 /* FacebookFrameworks */,
+				365769641B864C79007CB43E /* AWSFrameworks */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

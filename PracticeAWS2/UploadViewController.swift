@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class UploadViewController: UIViewController {
     
+    @IBOutlet weak var FBLoginButton: UIBarButtonItem!
     @IBOutlet weak var uploadedImagesCollectionView: UICollectionView!
 
     var uploadReqeusts      = [AWSS3TransferManagerUploadRequest?]()
     var uploadFileURLs      = [NSURL?]()
+    
+    let loginManager = FBSDKLoginManager()
     
     // MARK: - View Lifecycle
     
@@ -32,6 +36,14 @@ class UploadViewController: UIViewController {
         attributes: nil,
         error: error) {
             println("Creating 'upload' directory failed with error: \(error)")
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if userDefaults.objectForKey(FBAccessToken) != nil {
+            FBLoginButton.title = "Logout"
         }
     }
     
@@ -65,6 +77,20 @@ class UploadViewController: UIViewController {
         
         presentViewController(alertController, animated: true, completion: nil)
     }
+    
+    @IBAction func loginToFacebook(sender: UIBarButtonItem) {
+        if sender.title == "Login" {
+            let loginController = storyboard?.instantiateViewControllerWithIdentifier("LogIn") as! FBLoginViewController
+            presentViewController(loginController, animated: true, completion: nil)
+        } else if sender.title == "Logout" {
+            if userDefaults.objectForKey(FBAccessToken) != nil {
+                loginManager.logOut()
+                userDefaults.removeObjectForKey(FBAccessToken)
+                dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
+    }
+    
     
     // MARK: - Helpers
     

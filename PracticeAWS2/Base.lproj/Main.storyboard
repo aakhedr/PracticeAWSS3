@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WEA-ku-Sxi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4w1-VG-yrp">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -20,6 +20,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="25U-Ts-Mie">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
+                                    <barButtonItem title="Login" id="0MS-i3-GqI">
+                                        <connections>
+                                            <action selector="loginToFacebook:" destination="BYZ-38-t0r" id="a39-vo-gnk"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="efr-gG-FST"/>
                                     <barButtonItem systemItem="action" id="Wvp-Ic-I6a">
                                         <connections>
@@ -118,12 +123,64 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Uploads" image="uploads" id="U1Q-VV-PeN"/>
                     <connections>
+                        <outlet property="FBLoginButton" destination="0MS-i3-GqI" id="4QL-ev-rab"/>
                         <outlet property="uploadedImagesCollectionView" destination="pjq-4n-l6f" id="GsZ-bI-3Sy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1365" y="-102"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="BOC-QZ-pqM">
+            <objects>
+                <viewController storyboardIdentifier="LogIn" id="4w1-VG-yrp" customClass="FBLoginViewController" customModule="PracticeAWS2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RUX-j4-6h8"/>
+                        <viewControllerLayoutGuide type="bottom" id="s68-ny-ad1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Id3-iq-HMw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="LogIn" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSN-87-WAl" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="16" y="285" width="568" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOm-7U-PlW">
+                                <rect key="frame" x="16" y="20" width="49" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="OAI-nV-s1w"/>
+                                </constraints>
+                                <state key="normal" title="Signup">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="OAI-nV-s1w"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MSN-87-WAl" firstAttribute="trailing" secondItem="Id3-iq-HMw" secondAttribute="trailingMargin" id="5EA-gH-XS5"/>
+                            <constraint firstItem="iOm-7U-PlW" firstAttribute="top" secondItem="RUX-j4-6h8" secondAttribute="bottom" id="PRu-Jm-Rac"/>
+                            <constraint firstItem="iOm-7U-PlW" firstAttribute="leading" secondItem="MSN-87-WAl" secondAttribute="leading" id="Ssd-4L-C4e"/>
+                            <constraint firstItem="MSN-87-WAl" firstAttribute="centerY" secondItem="Id3-iq-HMw" secondAttribute="centerY" id="aIk-0l-zS9"/>
+                            <constraint firstItem="MSN-87-WAl" firstAttribute="leading" secondItem="Id3-iq-HMw" secondAttribute="leadingMargin" id="dVr-5k-Pdn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="MSN-87-WAl" id="AOK-eb-RtD"/>
+                        <segue destination="WEA-ku-Sxi" kind="show" identifier="TabBarSegue" id="dFJ-1r-hWb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Po0-dC-biB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-317" y="238"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="MXf-Io-8ds">

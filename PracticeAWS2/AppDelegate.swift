@@ -22,6 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             identityPoolId: CognitoIdentityPoolId
         )
         
+        if let token: AnyObject = userDefaults.objectForKey(FBAccessToken) {
+            credentialsProvider.logins = [
+                "graph.facebook.com" : token
+            ]
+        }
+        
         let defaultServiceConfiguration = AWSServiceConfiguration(
             region: AWSRegionType.EUWest1,
             credentialsProvider: credentialsProvider

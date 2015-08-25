@@ -8,31 +8,46 @@
 
 import UIKit
 import FBSDKCoreKit
+import FBSDKLoginKit
 
-class FBLoginViewController: UIViewController {
+let userDefaults = NSUserDefaults.standardUserDefaults()
+let FBAccessToken = "FBAccessToken"
 
-    
+struct ReadPermissions {
+    static let Email        = "email"
+    static let UserFriends  = "user_friends"
+}
+
+class FBLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+
+    @IBOutlet weak var loginButton: FBSDKLoginButton!
+
+    private let loginManager = FBSDKLoginManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        loginButton.delegate = self
+        loginButton.readPermissions = [ReadPermissions.Email, ReadPermissions.UserFriends]
     }
     
+    // MARK: - Facebook Login Button Delegate
+    
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        if let error = error {
+            println("error logging in to Facebook: \(error)")
+        } else if result.isCancelled {
+            
+            // TODO: -
+            
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        } else {
+            userDefaults.setObject(FBSDKAccessToken.currentAccessToken().tokenString, forKey: FBAccessToken)
+            
+            // TODO: - Need animation here
+            performSegueWithIdentifier("TabBarSegue", sender: self)
+        }
     }
-    */
-
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {  }
 }
