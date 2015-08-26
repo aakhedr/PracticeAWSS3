@@ -23,6 +23,8 @@ class FBLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var loginButton: FBSDKLoginButton!
 
     private let loginManager = FBSDKLoginManager()
+ 
+    // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,26 +44,14 @@ class FBLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             
 
         } else {
+            
             // TODO: - Need animation here
             
-            let credentialsProvider = AWSCognitoCredentialsProvider(
-                regionType: DefaultServiceRegionType,
-                identityPoolId: CognitoIdentityPoolId
-            )
-            
+            let credentialsProvider = initializeAWSCognitoClient()
             credentialsProvider.logins = [
                 "graph.facebook.com" : FBSDKAccessToken.currentAccessToken().tokenString
             ]
-            
-            let defaultServiceConfiguration = AWSServiceConfiguration(
-                region: AWSRegionType.EUWest1,
-                credentialsProvider: credentialsProvider
-            )
-            AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = defaultServiceConfiguration
-            
-            // Store the Cognito identity ID
-            userDefaults.setObject(credentialsProvider.identityId, forKey: identityId)
-            
+
 //            let syncClient: AWSCognito = AWSCognito.defaultCognito()
 //            let dataset: AWSCognitoDataset = syncClient.openOrCreateDataset("myDataSet")
 //            dataset.setString("myValue", forKey: "myKey")
@@ -86,10 +76,24 @@ class FBLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "TabBarSegue" {
-            
-            // TODO: - Lets see if we want to do something here!
-            
+            initializeAWSCognitoClient()
         }
     }
     
+    // MARK: - Helpers
+    
+    func initializeAWSCognitoClient() -> AWSCognitoCredentialsProvider {
+        let credentialsProvider = AWSCognitoCredentialsProvider(
+            regionType: DefaultServiceRegionType,
+            identityPoolId: CognitoIdentityPoolId
+        )
+        
+        let defaultServiceConfiguration = AWSServiceConfiguration(
+            region: AWSRegionType.EUWest1,
+            credentialsProvider: credentialsProvider
+        )
+        AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = defaultServiceConfiguration
+        
+        return credentialsProvider
+    }
 }

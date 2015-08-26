@@ -42,9 +42,8 @@ class UploadViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        if userDefaults.objectForKey(identityId) != nil {
-            FBLoginButton.title = "Logout"
-        }
+        // TODO: - Add code here to change bar button title in case of logged in
+        
     }
     
     // MARK: - Actions
@@ -204,9 +203,13 @@ extension UploadViewController: UINavigationControllerDelegate, UIImagePickerCon
     }
 }
 
-extension UploadViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     // MARK: - Collection View Data Source
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 2
+    }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return uploadReqeusts.count

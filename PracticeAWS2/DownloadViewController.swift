@@ -198,6 +198,34 @@ class DownloadViewController: UIViewController {
         }
         downloadedImagesCollectionView.reloadData()
     }
+    
+    func deleteAPicture(downloadFileURL: NSURL!, indexPath: NSIndexPath) {
+        let s3 = AWSS3.defaultS3()
+        
+        let deleteRequest = AWSS3DeleteObjectRequest()
+        deleteRequest.bucket = S3BucketName
+        deleteRequest.key = downloadFileURL.pathComponents?.last as! String
+        
+        s3.deleteObject(deleteRequest).continueWithBlock { (task: AWSTask!) -> AnyObject! in
+            if let error = task.error {
+                println("error deleting image: \(error)")
+            } else if let exception = task.exception {
+                println("exception deleting image: \(exception)")
+            } else {
+                dispatch_async(dispatch_get_main_queue()) {
+                    var error = NSErrorPointer()
+                    NSFileManager.defaultManager().removeItemAtPath(downloadFileURL.path!, error: error)
+                    if error != nil {
+                        println(".png file could not be deleted from disk with error: \(error)")
+                    }
+                    self.downloadRequests.removeAtIndex(indexPath.row)
+                    
+                    self.downloadedImagesCollectionView.reloadData()
+                }
+            }
+            return nil
+        }
+    }
 }
 
 extension DownloadViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -289,52 +317,26 @@ extension DownloadViewController: UICollectionViewDataSource, UICollectionViewDe
         
         // Delete an image (if user is logged in only)
         
-        if userDefaults.objectForKey(identityId) != nil {
-            if let downloadFileURL = downloadFileURLs[indexPath.row] {
-                let alertController = UIAlertController(
-                    title: nil,
-                    message: "Are you sure you want to delete this picture?",
-                    preferredStyle: .ActionSheet)
-                
-                let yesAction = UIAlertAction(
-                    title: "Yes",
-                    style: UIAlertActionStyle.Default) { (aciton: UIAlertAction!) -> Void in
-                        let s3 = AWSS3.defaultS3()
-                        
-                        let deleteRequest = AWSS3DeleteObjectRequest()
-                        deleteRequest.bucket = S3BucketName
-                        deleteRequest.key = downloadFileURL.pathComponents?.last as! String
-                        
-                        s3.deleteObject(deleteRequest).continueWithBlock { (task: AWSTask!) -> AnyObject! in
-                            if let error = task.error {
-                                println("error deleting image: \(error)")
-                            } else if let exception = task.exception {
-                                println("exception deleting image: \(exception)")
-                            } else {
-                                dispatch_async(dispatch_get_main_queue()) {
-                                    var error = NSErrorPointer()
-                                    NSFileManager.defaultManager().removeItemAtPath(downloadFileURL.path!, error: error)
-                                    if error != nil {
-                                        println(".png file could not be deleted from disk with error: \(error)")
-                                    }
-                                    self.downloadRequests.removeAtIndex(indexPath.row)
-                                    
-                                    self.downloadedImagesCollectionView.reloadData()
-                                }
-                            }
-                            return nil
-                        }
-                }
-                alertController.addAction(yesAction)
-                
-                let noAction = UIAlertAction(
-                    title: "No",
-                    style: .Cancel,
-                    handler: nil)
-                alertController.addAction(noAction)
-                
-                presentViewController(alertController, animated: true, completion: nil)
+        if let downloadFileURL = downloadFileURLs[indexPath.row] {
+            let alertController = UIAlertController(
+                title: nil,
+                message: "Are you sure you want to delete this picture?",
+                preferredStyle: .ActionSheet)
+            
+            let yesAction = UIAlertAction(
+                title: "Yes",
+                style: UIAlertActionStyle.Default) { (aciton: UIAlertAction!) -> Void in
+                    self.deleteAPicture(downloadFileURL, indexPath: indexPath)
             }
+            alertController.addAction(yesAction)
+            
+            let noAction = UIAlertAction(
+                title: "No",
+                style: .Cancel,
+                handler: nil)
+            alertController.addAction(noAction)
+            
+            presentViewController(alertController, animated: true, completion: nil)
         }
     }
 }
